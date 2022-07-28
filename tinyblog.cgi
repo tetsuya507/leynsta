@@ -1,7 +1,7 @@
 #!/bin/sh
 
 read posted
-FILE="../logs_tinyblog.txt" #テキストファイルを参照
+FILE="../logs.txt" #テキストファイルを参照
 log=`echo $posted | sed 's/comment=//' | tr % \= | nkf -WmQ` #postedをsedに渡し、trに渡し、nkfに渡す
 if [ $log != "" ] ; then #if文で空欄の時以外で実行
 echo "<dt>"名無しの大学生 "`date "+%F %T"`</dt><dd>$log</dd>" >> $FILE #dateを<dt>タグ、logを<dd>タグに入れる
